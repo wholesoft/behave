@@ -1,0 +1,36 @@
+
+behave:>behave features/login.feature
+Feature: Wholesoft Notes Login # features/login.feature:1
+
+  Scenario: Login to Wholesoft Notes with valid paramters  # features/login.feature:3
+    Given User launches Chrome browser                     # features/steps/login.py:47
+    When User Opens Home page                              # features/steps/login.py:52
+    And User clicks on login                               # features/steps/login.py:56
+    And User enters the username "test@wholesoft.net"      # features/steps/login.py:60
+    And User enters the password "testPassword9!"          # features/steps/login.py:64
+    And User clicks Login                                  # features/steps/login.py:68
+    Then User successfully logs in                         # features/steps/login.py:83
+<page_has_loaded> - page not loaded
+<page_has_loaded> - page not loaded
+<page_has_loaded> - page loaded: https://notes.wholesoft.net/mynotes
+Title is: My Notes - Wholesoft Notes
+
+  Scenario: Login to Wholesoft Notes with valid paramters  # features/login.feature:12
+    Given User launches Chrome browser                     # features/steps/login.py:47
+    When User Opens Home page                              # features/steps/login.py:52
+    And User clicks on login                               # features/steps/login.py:56
+    And User enters the username "test@invalid.net"        # features/steps/login.py:60
+    And User enters the password "invalidpassword"         # features/steps/login.py:64
+    And User clicks Login                                  # features/steps/login.py:68
+    Then User successfully fails to log in                 # features/steps/login.py:73
+<page_has_loaded> - page not loaded
+<page_has_loaded> - page not loaded
+<page_has_loaded> - page not loaded
+<page_has_loaded> - page loaded: https://notes.wholesoft.net/login
+Title is: Login - Wholesoft Notes
+
+1 feature passed, 0 failed, 0 skipped
+2 scenarios passed, 0 failed, 0 skipped
+14 steps passed, 0 failed, 0 skipped, 0 undefined
+Took 0m14.960s
+behave:>
