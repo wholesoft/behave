@@ -47,7 +47,8 @@ def page_has_loaded(driver, sleep_time = 2):
 @given(u'User launches Chrome browser')
 def step_impl(context):
     context.driver=webdriver.Chrome(service=Service('/path/to/chromedriver'))
-    context.driver.implicitly_wait(5)
+    #context.driver.implicitly_wait(5)
+    wait = WebDriverWait(context.driver, 30)
 
 @when(u'User Opens Home page')
 def step_impl(context):
